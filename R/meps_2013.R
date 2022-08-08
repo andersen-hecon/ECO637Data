@@ -1,0 +1,116 @@
+#' Extract of the 2013 Full Year Consolidated MEPS
+#'
+#' Subset (or full file) of the 2013 Medical Expenditure Panel Survey full year consolidated data file (HC-163) for use in Empirical Health Economics (ECO 637). Full documentation can be found at the (MEPS website)[https://meps.ahrq.gov/data_stats/download_data_files_detail.jsp?cboPufNumber=HC-163].
+#'
+#' @format A tibble with 36940 rows and 104 (\code{meps_2013}) or 1790 variables (\code{meps_2013_full}).
+#' \describe{
+#' \item{duid}{DWELLING UNIT ID}
+#' \item{pid}{PERSON NUMBER}
+#' \item{dupersid}{PERSON ID (DUID + PID)}
+#' \item{panel}{PANEL NUMBER}
+#' \item{keyness}{PERSON KEY STATUS}
+#' \item{insc1231}{INSCOPE STATUS ON 12/31/13}
+#' \item{elgrnd13}{ELIGIBILITY STATUS AS OF 12/31/13}
+#' \item{age13x}{AGE AS OF 12/31/13 (EDITED/IMPUTED)}
+#' \item{sex}{SEX}
+#' \item{racever}{RACE QUESTION VERSION ASKED}
+#' \item{racev1x}{RACE (EDITED/IMPUTED)}
+#' \item{raceax}{ASIAN AMONG RACES RPTD (EDITED/IMPUTED)}
+#' \item{racebx}{BLACK AMONG RACES RPTD (EDITED/IMPUTED)}
+#' \item{racewx}{WHITE AMONG RACES RPTD (EDITED/IMPUTED)}
+#' \item{racethx}{RACE/ETHNICITY (EDITED/IMPUTED)}
+#' \item{hispanx}{HISPANIC ETHNICITY (EDITED/IMPUTED)}
+#' \item{hispcat}{SPECIFIC HISPANIC ETHNICITY GROUP}
+#' \item{marry13x}{MARITAL STATUS-12/31/13 (EDITED/IMPUTED)}
+#' \item{edrecode}{EDUCATION RECODE (EDITED)}
+#' \item{rthlth31}{PERCEIVED HEALTH STATUS - RD 3/1}
+#' \item{rthlth42}{PERCEIVED HEALTH STATUS - RD 4/2}
+#' \item{rthlth53}{PERCEIVED HEALTH STATUS - RD 5/3}
+#' \item{mnhlth31}{PERCEIVED MENTAL HEALTH STATUS - RD 3/1}
+#' \item{mnhlth42}{PERCEIVED MENTAL HEALTH STATUS - RD 4/2}
+#' \item{mnhlth53}{PERCEIVED MENTAL HEALTH STATUS - RD 5/3}
+#' \item{hibpdx}{HIGH BLOOD PRESSURE DIAG (>17)}
+#' \item{bpmldx}{MULT DIAG HIGH BLOOD PRESS (>17)}
+#' \item{chddx}{CORONARY HRT DISEASE DIAG (>17)}
+#' \item{angidx}{ANGINA DIAGNOSIS (>17)}
+#' \item{midx}{HEART ATTACK (MI) DIAG (>17)}
+#' \item{ohrtdx}{OTHER HEART DISEASE DIAG (>17)}
+#' \item{strkdx}{STROKE DIAGNOSIS (>17)}
+#' \item{emphdx}{EMPHYSEMA DIAGNOSIS (>17)}
+#' \item{chbron31}{CHRONC BRONCHITS LAST 12 MTHS (>17)-R3/1}
+#' \item{chbron53}{CHRONC BRONCHITS LAST 12 MTHS (>17)-R5/3}
+#' \item{choldx}{HIGH CHOLESTEROL DIAGNOSIS (>17)}
+#' \item{cancerdx}{CANCER DIAGNOSIS (>17)}
+#' \item{diabdx}{DIABETES DIAGNOSIS (>17)}
+#' \item{jtpain31}{JOINT PAIN LAST 12 MONTHS (>17) - RD 3/1}
+#' \item{jtpain53}{JOINT PAIN LAST 12 MONTHS (>17) - RD 5/3}
+#' \item{arthdx}{ARTHRITIS DIAGNOSIS (>17)}
+#' \item{arthtype}{TYPE OF ARTHRITIS DIAGNOSED (>17)}
+#' \item{asthdx}{ASTHMA DIAGNOSIS}
+#' \item{seatbe53}{WEARS SEAT BELT (>15) - RD 5/3}
+#' \item{pcs42}{SAQ:PHY COMPONENT SUMMRY SF-12V2 IMPUTED}
+#' \item{mcs42}{SAQ:MNT COMPONENT SUMMRY SF-12V2 IMPUTED}
+#' \item{faminc13}{FAMILY'S TOTAL INCOME}
+#' \item{prvev13}{EVER HAVE PRIVATE INSURANCE DURING 13}
+#' \item{triev13}{EVER HAVE TRICARE/CHAMPVA DURING 13}
+#' \item{mcrev13}{EVER HAVE MEDICARE DURING 13 (ED)}
+#' \item{mcdev13}{EVER HAVE MEDICAID/SCHIP DURING 13 (ED)}
+#' \item{opaev13}{EVER HAVE OTHER PUBLIC A INS DURING 13}
+#' \item{opbev13}{EVER HAVE OTHER PUBLIC B INS DURING 13}
+#' \item{unins13}{UNINSURED ALL OF 13}
+#' \item{inscov13}{HEALTH INSURANCE COVERAGE INDICATOR 13}
+#' \item{insurc13}{FULL YEAR INSURANCE COVERAGE STATUS 2013}
+#' \item{mcrpd13}{COV BY MEDICARE PMED BENEFIT - 12/31/13}
+#' \item{mcrpb13}{COV BY MEDICARE PART B - 12/31/13}
+#' \item{mcrpho13}{COV BY MEDICARE MANAGED CARE - 12/31/13}
+#' \item{mcdhmo13}{COVRED BY MEDICAID OR SCHIP HMO-12/31/13}
+#' \item{mcdmc13}{COV BY MCAID/SCHIP GTKEEPR PLAN-12/31/13}
+#' \item{prvhmo13}{COVERED BY PRIVATE HMO - 12/31/13}
+#' \item{mcaid13}{COV BY MEDICAID OR SCHIP - 12/31/13}
+#' \item{mcare13}{COV BY MEDICARE - 12/31/13}
+#' \item{priv13}{COV BY PRIV HLTH INS - 12/31/13}
+#' \item{ins13x}{INSURED - 12/31/13 (ED)}
+#' \item{dntins13}{DENTAL INS - R5/R3 UNTIL 12/31/13}
+#' \item{tottch13}{TOTAL HEALTH CARE CHARGES 13, EXCL RX}
+#' \item{totexp13}{TOTAL HEALTH CARE EXP 13}
+#' \item{totslf13}{TOTAL AMT PAID BY SELF/FAMILY 13}
+#' \item{obtotv13}{# OFFICE-BASED PROVIDER VISITS 13}
+#' \item{obvtch13}{OFFICE-BASED PROVIDER VISIT CHARGES 13}
+#' \item{obvexp13}{TOTAL OFFICE-BASED EXP 13}
+#' \item{obvslf13}{ALL OFFICE VISITS - SELF/FAMILY AMT 13}
+#' \item{optotv13}{# OUTPATIENT DEPT PROVIDER VISITS 13}
+#' \item{opttch13}{OPD FACILITY + DR VISIT CHARGES - 13}
+#' \item{optexp13}{TOTAL OUTPATIENT FAC + DR EXP 13}
+#' \item{optslf13}{ALL OPD VSTS-SELF/FAMILY AMT-(FAC+DR) 13}
+#' \item{ertot13}{# EMERGENCY ROOM VISITS 13}
+#' \item{erttch13}{ER FACILITY + DR VISIT CHARGES 13}
+#' \item{ertexp13}{TOTAL ER FACILITY + DR EXP 13}
+#' \item{ertslf13}{ER-SELF/FAMILY AMT-(FAC+DR) 13}
+#' \item{ipdis13}{# HOSPITAL DISCHARGES, 2013}
+#' \item{iptexp13}{TOT HOSP IP FACILITY + DR EXP 13}
+#' \item{ipttch13}{IP HOSP STAY CHARGES (FAC+DR) 13}
+#' \item{iptslf13}{IP HOSP STAZ-SELF/FAMILY AMT-(FAC+DR) 13}
+#' \item{dvtot13}{# DENTAL CARE VISITS 13}
+#' \item{dvttch13}{TOTAL DENTAL CARE VISIT CHARGES 13}
+#' \item{dvtexp13}{TOTAL DENTAL CARE EXP 13}
+#' \item{dvtslf13}{ALL DENTAL CARE - SELF/FAMILY AMT 13}
+#' \item{hhtotd13}{# HOME HEALTH PROVIDER DAYS, 2013}
+#' \item{hhagd13}{# AGENCY HOME HEALTH PROVIDER DAYS 13}
+#' \item{hhatch13}{HOME HEALTH AGENCY VISIT CHARGES 13}
+#' \item{hhaexp13}{TOTAL HOME HEALTH AGENCY EXP 13}
+#' \item{hhaslf13}{HOME HLTH AGENCY - SELF/FAMILY AMT 13}
+#' \item{hhindd13}{# NON-AGENCY HOME HEALTH PROVIDR DAYS 13}
+#' \item{hhntch13}{HOME HEALTH NON-AGENCY VISIT CHARGES 13}
+#' \item{hhnexp13}{TOTAL HOME HEALTH NON-AGNCY EXP 13}
+#' \item{hhnslf13}{HOME HLTH NON-AGNCY - SELF/FAM AMT 13}
+#' \item{hhinfd13}{# INFORMAL HOME HEALTH PROVIDER DAYS 13}
+#' \item{rxtot13}{# PRESC MEDS INCL REFILLS 13}
+#' \item{rxexp13}{TOTAL RX-EXP 13}
+#' \item{rxslf13}{TOTAL RX-SELF/FAMILY AMT 13}
+#' \item{perwt13f}{FINAL PERSON WEIGHT, 2013}
+#' }
+#'
+#'
+#' @source \url{https://meps.ahrq.gov/mepsweb/data_stats/download_data_files_detail.jsp?cboPufNumber=HC-163}
+"meps_2013"
+"meps_2013_full"
